@@ -10,8 +10,8 @@ app.use(express.static('public'));
 
 app.get('/testapi', (req, res) => {
   let _param1 = req.query.wording
-  _param1 = _param1 ==null ? '' : _param1
-  res.json({"detail":"คุณพูดว่า " +_param1})
+  _param1 = _param1 ==null ? '---' : _param1
+  res.json({"detail": _param1})
 }) 
 
 app.post('/auapi', (req, res) => {
