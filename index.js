@@ -1,5 +1,9 @@
-const express = require('express')
-const app = express()
+
+var express=require("express");
+var app=express();
+var port=process.env.PORT || 3000;
+
+
 
 app.get(_baseurl + '/', async function (req, res, next) {
   res.send("hello");
@@ -14,6 +18,4 @@ app.post('/auapi', (req, res) => {
   res.json({"message":"Hello world"})
 })
 
-app.listen(3000, () => {
-  console.log('Start server at port 3000.')
-})
+app.listen(port);
