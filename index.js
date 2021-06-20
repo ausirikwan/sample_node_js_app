@@ -2,11 +2,14 @@
 var express=require("express");
 var app=express();
 var port=process.env.PORT || 3000;
+var path    = require("path");
 
+app.use(express.static('public'));
 
+app.get("/",(req,res)=>{
 
-app.get(_baseurl + '/', async function (req, res, next) {
-  res.send("hello");
+    res.sendFile(path.join(__dirname+'/public/index.html'));
+
 });
 
 
