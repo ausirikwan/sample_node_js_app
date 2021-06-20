@@ -14,7 +14,8 @@ app.get("/",(req,res)=>{
 
 
 app.get('/testapi', (req, res) => {
-  res.json({"detail":"Hello world"})
+  let _param1 = req.query.wording
+  res.json({"detail":"คุณพูดว่า " +_param1})
 })
 
 app.post('/auapi', (req, res) => {
