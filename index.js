@@ -18,6 +18,12 @@ app.get('/testapi', (req, res) => {
   res.json({"detail":"คุณพูดว่า " +_param1})
 })
 
+app.post('/testapi', (req, res) => {
+  let _param1 = req.query.wording
+  res.json({"detail":"คุณพูดว่า " +_param1})
+})
+
+
 app.post('/auapi', (req, res) => {
   res.json({"message":"Hello world"})
 })
