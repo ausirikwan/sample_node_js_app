@@ -20,7 +20,7 @@ app.get('/testapi', (req, res) => {
 }) 
 
 app.post('/auapi', (req, res) => {
-  res.json({"message":"Hello world"})
+  res.json({"detail":"Hello world"})
 })
 
 app.listen(port);
