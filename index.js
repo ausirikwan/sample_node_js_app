@@ -1,5 +1,10 @@
+var port = process.env.PORT || 3000;
 const express = require('express')
 const app = express()
+
+app.get('/', (req, res) => {
+    res.send("hello")
+})
 
 app.get('/testapi', (req, res) => {
   res.json({"detail":"Hello world"})
@@ -22,8 +27,4 @@ app.get('/vaccine', (req, res) => {
 })
 
 
-
-
-app.listen(3000, () => {
-  console.log('Start server at port 3000.')
-})
+app.listen(port);
