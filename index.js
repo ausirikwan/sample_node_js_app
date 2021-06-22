@@ -1,28 +1,29 @@
-
-var express=require("express");
-var app=express();
-var port=process.env.PORT || 3000;
-var path    = require("path");
-
-app.use(express.static('public'));
-
-
+const express = require('express')
+const app = express()
 
 app.get('/testapi', (req, res) => {
-  let _param1 = req.query.wording
-  _param1 = _param1 ==null ? '---' : _param1
-  res.json({"detail": _param1})
-}) 
-
-app.post('/auapi', (req, res) => {
   res.json({"detail":"Hello world"})
 })
 
-app.get("/",(req,res)=>{
+app.get('/newcustomer', (req, res) => {
+    res.json({"iscustomer":"false"})
+})
 
-    res.sendFile(path.join(__dirname+'/public/index.html'));
+app.get('/existingcustomer', (req, res) => {
+    res.json({"iscustomer":"true"})
+})
 
-});
+app.get('/vaccined', (req, res) => {
+    res.json({"isvaccined":"true"})
+})
+
+app.get('/vaccine', (req, res) => {
+    res.json({"isvaccined":"false"})
+})
 
 
-app.listen(port);
+
+
+app.listen(3000, () => {
+  console.log('Start server at port 3000.')
+})
